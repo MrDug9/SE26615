@@ -16,9 +16,13 @@
       <file leaf-file-name="mult.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mult.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="119">
+              <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <folding>
+                <marker date="1506970062512" expanded="true" signature="22:73" ph="..." />
+                <marker date="1506970062512" expanded="true" signature="185:204" ph="..." />
+                <marker date="1506970062512" expanded="true" signature="252:282" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,7 +126,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="981000" />
+    <option name="totallyTimeSpent" value="1427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="14" width="1400" height="1000" extended-state="0" />
@@ -224,9 +228,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mult.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <marker date="1506970062512" expanded="true" signature="22:73" ph="..." />
+            <marker date="1506970062512" expanded="true" signature="185:204" ph="..." />
+            <marker date="1506970062512" expanded="true" signature="252:282" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
