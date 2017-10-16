@@ -29,3 +29,10 @@ function getDogsAsTable ($db){
         die("problem with the dogs table");
     }
 }
+function addDog ($db, $name, $gender, $fixed){
+    try{
+        $sql= $db->prepare("INSERT INTO animals VALUES (null, :name, :gender, :fixed)");
+    }catch{
+        die("There was a problem");
+    }
+}
