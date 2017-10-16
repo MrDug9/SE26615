@@ -5,7 +5,7 @@ include_once("assets/header.php");
 $db = dbcon();
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? "";
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING) ?? "";
-$gender = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_REGEXP, array("options"->array("regexp"->'/^[NF]$/'))) ?? "";
+$gender = filter_input(INPUT_POST, 'gender', FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/^[MF]$/'))) ?? "";
 $fixed = filter_input(INPUT_POST, 'fixed', FILTER_VALIDATE_BOOLEAN) ?? false;
 switch ($action){
     case "Add":
