@@ -14,8 +14,8 @@ function getActorsAsTable ($db){
         if ($sql->rowCount() > 0) {
             $table = "<table>" . PHP_EOL;
             foreach ($actors as $actor){
-                $table  .="<tr><td>" . $actor['fname'];
-                $table  .="<tr><td>" . $actor['lname'];
+                $table  .="<tr><td>" . $actor['firstname'];
+                $table  .="</td><td>" . $actor['lastname'];
                 $table .="</td><td>" . $actor['dob'];
                 $table .="</td><td>" . $actor['height'];
                 $table .="</td></tr>";
@@ -32,7 +32,7 @@ function getActorsAsTable ($db){
 }
 function addActor ($db, $fname, $lname, $dob, $height){
     try {
-        $sql = $db->prepare("INSERT INTO animals VALUES(null, :fname, :lname, :dob, :height)");
+        $sql = $db->prepare("INSERT INTO actors VALUES(null, :fname, :lname, :dob, :height)");
         $sql->bindParam(':fname', $fname);
         $sql->bindParam(':lname', $lname);
         $sql->bindParam(':dob', $dob);

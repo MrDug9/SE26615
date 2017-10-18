@@ -12,8 +12,8 @@ $db = dbcon();
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? "";
 $fname = filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_STRING) ?? "";
 $lname = filter_input(INPUT_POST, 'lname', FILTER_SANITIZE_STRING) ?? "";
-$dob = filter_input(INPUT_POST, 'dob', FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/^[MF]$/'))) ?? "";
-$height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_BOOLEAN) ?? false;
+$dob = filter_input(INPUT_POST, 'dob') ?? "";
+$height = filter_input(INPUT_POST, 'height', FILTER_SANITIZE_STRING) ?? "";
 switch ($action){
     case "Add":
         addActor($db, $fname, $lname, $dob, $height);
