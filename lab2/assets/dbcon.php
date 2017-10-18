@@ -7,14 +7,14 @@
  */
 function dbcon()
 {
-    $dsn = "mysql:host=localhost; dbname=test";
-    $username = "test";
-    $password = "se266";
+    $dsn = "mysql:host=localhost; dbname=phpclassfall2017";
+    $username = "PHPClassFall2017";
+    $password = "classpass";
     try {
         $db = new PDO($dsn, $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $db;
     } catch (PDOException $e) {
-        die("There is problem. GO AWAY!!!");
+        die($e/*"error connecting to database"*/);
     }
 }

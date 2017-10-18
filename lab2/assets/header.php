@@ -16,7 +16,11 @@
 <body>
 <header>
     <nav>
-
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="addactor.php">Add</a></li>
+            <li><a href="viewactor.php">View</a></li>
+        </ul>
     </nav>
 </header>
 <section>
