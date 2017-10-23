@@ -18,17 +18,17 @@ function getCorpsAsRow ($db){
                 $table .="<tr><td><label for='Name'>Company:</label> ".$corp["corp"];
                 $table .="|<a href='read.php?id=".$corp["id"]."'>Read</a>|";
                 $table .="<a href='update.php?id=".$corp["id"]."'>Update</a>|";
-                $table .="<a href='delete.php?id=".$corp["id"]."'>Delete</a>|</td></tr>";
+                $table .="<a href='index.php?id=".$corp["id"]."'>Delete</a>|</td></tr>";
 
             }
 
             $table .= "</table>" . PHP_EOL;
         }else{
-            $table = "No actors found";
+            $table = "No Corps found";
         }
         return $table;
     }catch (PDOException $e){
-        die("problem with the actors table");
+        die("problem with the corps table");
     }
 }
 function readCorp ($db,$id){
@@ -48,7 +48,7 @@ function readCorp ($db,$id){
                     $table .= " <label for='zip'>Zipcode:</label> " . $corp["zipcode"];
                     $table .= " <label for='owner'>Owner:</label> " . $corp["owner"];
                     $table .= " <label for='phone'>Phone Number:</label> " . $corp["phone"];
-                    $table .= "|<a href='read.php'>Read</a>|";
+                    $table .= "|<a href='index.php'>View</a>|";
                     $table .= "<a href='update.php'>Update</a>|";
                     $table .= "<a href='delete.php'>Delete</a>|</td></tr>";
                 }
@@ -66,13 +66,14 @@ function readCorp ($db,$id){
 }
 
 
-function addActor ($db, $fname, $lname, $dob, $height){
+function addCorp ($db, $corp, $email, $zip, $owner, $phone){
     try {
-        $sql = $db->prepare("INSERT INTO actors VALUES(null, :fname, :lname, :dob, :height)");
-        $sql->bindParam(':fname', $fname);
-        $sql->bindParam(':lname', $lname);
-        $sql->bindParam(':dob', $dob);
-        $sql->bindParam(':height', $height);
+        $sql = $db->prepare("INSERT INTO corps VALUES(null, :corp, now(), :email, :zip, :owner, :phone)");
+        $sql->bindParam(':corp', $corp);
+        $sql->bindParam(':email', $email);
+        $sql->bindParam(':zip', $zip);
+        $sql->bindParam(':owner', $owner);
+        $sql->bindParam(':phone', $phone);
         $sql->execute();
         echo $sql->rowCount() . " rows inserted.";
     } catch(PDOException $e){

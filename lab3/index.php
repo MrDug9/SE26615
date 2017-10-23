@@ -8,6 +8,7 @@
 require_once ("assets/dbcon.php");
 require_once ("assets/corp.php");
 include_once("assets/header.php");
+?><a href="add.php">Add Company</a> <?php
 $db=dbcon();
 echo(getCorpsAsRow($db));
 
