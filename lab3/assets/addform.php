@@ -15,5 +15,5 @@
     <label for="zip">Zipcode</label><input type="text" name="zip" /><br />
     <label for="owner">Owner</label><input type="text" name="owner" /><br />
     <label for="phone">Phone Number</label><input type="text" name="phone" /><br />
-    <input type="submit" name="action" value="Add" />
+    <input type="submit" name="action" value="Submit" />
 </form>

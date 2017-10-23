@@ -17,10 +17,10 @@ $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING)??"";
 $owner = filter_input(INPUT_POST, 'owner', FILTER_SANITIZE_STRING)?? "";
 $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING)??"";
 switch ($action){
-    case "Add":
+    case "Submit":
         addCorp($db, $corp, $email, $zip, $owner, $phone);
         break;
 }
-
+?><a href="index.php">View</a> <?php
 include_once("assets/footer.php");
 ?>
