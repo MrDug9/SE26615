@@ -8,7 +8,8 @@
 require_once ("assets/dbcon.php");
 require_once ("assets/corp.php");
 include_once("assets/header.php");
-$id= filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING)??filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING)?? "";
+$ids= filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING)??filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING)?? "";
+$id = intval($ids);
 $db = dbcon();
 echo(deleteCorp($db,$id));
 ?><a href="index.php">View</a> <?php

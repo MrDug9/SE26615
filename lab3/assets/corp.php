@@ -69,7 +69,8 @@ function readCorp ($db,$id){
 function deleteCorp($db, $id){
 
     try {
-        $sql = $db->prepare("DELETE * FROM corps WHERE id=".$id);
+        $sql = $db->prepare("DELETE FROM corps WHERE id = :id");
+        $sql->bindParam(':id', $id);
         $sql->execute();
         echo $sql->rowCount() . " rows deleted.";
     }catch (PDOException $e){
@@ -78,18 +79,7 @@ function deleteCorp($db, $id){
 }
 
 
-function updateCorp ($db,$id)
-{
-    try {
-        $sql = $db->prepare("SELECT * FROM corps");
-        $sql->execute();
-        $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
-        return $corps;
-    } catch (PDOException $e) {
-        die("problem with the corps table");
-    }
 
-}
 
 
 function addCorp ($db, $corp, $email, $zip, $owner, $phone){
@@ -102,6 +92,22 @@ function addCorp ($db, $corp, $email, $zip, $owner, $phone){
         $sql->bindParam(':phone', $phone);
         $sql->execute();
         echo $sql->rowCount() . " rows inserted.";
+    } catch(PDOException $e){
+        $e->getMessage();
+    }
+}
+
+function updateCorp ($db, $corp, $email, $zip, $owner, $phone, $id){
+    try {
+        $sql = $db->prepare("UPDATE corps SET corp = :corp, email = :email, zipcode = :zip, owner = :owner, phone = :phone WHERE id = :id");
+        $sql->bindParam(':id', $id);
+        $sql->bindParam(':corp', $corp);
+        $sql->bindParam(':email', $email);
+        $sql->bindParam(':zip', $zip);
+        $sql->bindParam(':owner', $owner);
+        $sql->bindParam(':phone', $phone);
+        $sql->execute();
+        echo $sql->rowCount() . " rows updated.";
     } catch(PDOException $e){
         $e->getMessage();
     }
