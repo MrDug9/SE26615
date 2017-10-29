@@ -3,11 +3,13 @@
  * Created by PhpStorm.
  * User: gamer
  * Date: 10/29/2017
- * Time: 9:32 AM
+ * Time: 10:15 AM
  */
-include_once (assets/header.php);
+
+$title = "Home";
 
 
+include_once ("assets/header.php");
+include_once ("assets/carousel.php");
 
-
-include_once (assets/footer.php);
+include_once ("assets/footer.php");
