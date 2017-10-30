@@ -8,6 +8,7 @@
 
 // Database driven app, so...
 require_once ('assets/dbconn.php');
+require_once ('assets/departments.php');
 require_once ('assets/employees.php');
 require_once ('assets/employeeViews.php');
 $db = getDB();
@@ -31,10 +32,12 @@ switch ($action) {
     case 'Read':
         // pass the db and the id to getEmployeeDisplay (which in turns gets the employee first) and echo results
         break;
-    case 'New':
+    case 'new':
+        $depts = getDepts($db);
         // initialize button to Save
         // initialize an employee array and set each field to a blank form value
         // pass both to employeeForm()
+        echo (employeeForm($depts));
         break;
     case 'Save':
         // pass the data to newEmployee()
