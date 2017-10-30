@@ -1,13 +1,8 @@
 
 .jumbotron{
-    background: #808080;
-    background: -webkit-linear-gradient(left, #0014a8 , #f8f8ff);
-    background: -o-linear-gradient(right, #0014a8 , #f8f8ff);
-    background: -moz-linear-gradient(right, #0014a8 , #f8f8ff);
-    background: linear-gradient(to right, #0014a8 , #f8f8ff);
-
-    /*background-color: #0014a8;
-    color: #f8f8ff;*/
+    background: url(assets/images/bot-hero-image.jpg) no-repeat center fixed;
+    background-size: cover;
+    color: #f8f8ff;
 }
 .logo-2{
     border-radius: 25px;
@@ -40,9 +35,5 @@
 
 .item span {
     font-style: normal;
-}
-html {
-    background: url(images/bot-hero-image.jpg) no-repeat center fixed;
-    background-size: cover;
 }
 

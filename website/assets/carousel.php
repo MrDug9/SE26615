@@ -19,8 +19,11 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="img-responsive" src="images/logo-1.png" alt="temp img">
+            <img class="img-responsive" src="assets/images/logo-1.png" alt="temp img">
             <h4>Temp Text</h4>
+        </div>
+        <div class="item">
+            <h4></h4>
         </div>
         <div class="item">
             <h4></h4>
