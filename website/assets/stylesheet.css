@@ -1,5 +1,6 @@
 
 .jumbotron{
+<<<<<<< HEAD
     background: #808080;
     background: -webkit-linear-gradient(left, #0014a8 , #f8f8ff);
     background: -o-linear-gradient(right, #0014a8 , #f8f8ff);
@@ -8,6 +9,11 @@
 
     /*background-color: #0014a8;
     color: #f8f8ff;*/
+=======
+    background: url(assets/images/bot-hero-image.jpg) no-repeat center fixed;
+    background-size: cover;
+    color: #f8f8ff;
+>>>>>>> wk4
 }
 .logo-2{
     border-radius: 25px;
@@ -35,14 +41,22 @@
     line-height: 1.375em;
     font-weight: 400;
     font-style: italic;
+<<<<<<< HEAD
     margin: 70px 0;
+=======
+    margin: 20px 0;
+>>>>>>> wk4
 }
 
 .item span {
     font-style: normal;
 }
+<<<<<<< HEAD
 html {
     background: url(images/bot-hero-image.jpg) no-repeat center fixed;
     background-size: cover;
 }
+=======
+
+>>>>>>> wk4
 

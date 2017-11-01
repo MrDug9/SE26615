@@ -25,6 +25,7 @@ include("stylesheet.css");
 </style>
 <body>
 <div class="jumbotron text-center">
+<<<<<<< HEAD
 <header>
     <h1><img class="logo-2" src="assets/images/logo-2.png" alt="logo-2"></h1>
     <nav class="navbar navbar-inverse">
@@ -45,5 +46,33 @@ include("stylesheet.css");
         </div>
     </nav>
 </header>
+=======
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php"><img class="logo-1" src="assets/images/logo-2.png"
+                                                              alt="logo-1" height="30px"></a>
+            </div>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.php">Home</a></li>
+                     <li><a href="#">Page 1</a></li>
+                     <li><a href="#">Page 2</a></li>
+                    </ul>
+                <ul class="nav navbar-nav navbar-right">
+                   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                   <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+>>>>>>> wk4
 
 
