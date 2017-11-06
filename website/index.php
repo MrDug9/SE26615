@@ -44,11 +44,11 @@ switch ($action){
 
     case('home'):
 
+        include_once ("assets/carousel.php");
+        include_once ("assets/footer.php");
 
-include_once ("assets/footer.php");
 
-        include ("assets/carousel.php");
 
 }
-include ("assets/footer.php");
 
+include ("assets/footer.php");
