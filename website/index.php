@@ -23,11 +23,11 @@ $treaName = "FILLER";
 $viceName = "FILLER";
 $action = filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING);
 include ("assets/header.php");
-if($_SESSION["login"] == false){
-    include_once("assets/login.php");
-    $uName = filter_input(INPUT_POST, "uname", FILTER_SANITIZE_STRING);
-    $pw = filter_input(INPUT_POST, "pw", FILTER_SANITIZE_STRING);
-}
+//if($_SESSION["login"] == false){
+//    include_once("assets/login.php");
+  //  $uName = filter_input(INPUT_POST, "uname", FILTER_SANITIZE_STRING);
+//    $pw = filter_input(INPUT_POST, "pw", FILTER_SANITIZE_STRING);
+//}
 
 
 
@@ -39,7 +39,7 @@ if($_SESSION["login"] == false){
 
 switch ($action){
     case('log'):
-        echo(conTest($db,$uName, $pw));
+       // echo(conTest($db,$uName, $pw));
     case('login'):
 
     case('home'):
@@ -50,5 +50,3 @@ switch ($action){
 
 
 }
-
-include ("assets/footer.php");

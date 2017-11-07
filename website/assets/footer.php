@@ -8,7 +8,7 @@
 ?>
 
 <footer>
-    Copyright &copy; <?php echo date('Y'); ?> Jesse Winters. All Rights Reserved.
+    Copyright &copy; <?php echo date('Y'); ?> NAME HERE BOI. All Rights Reserved.
 </footer>
 </div>
 
