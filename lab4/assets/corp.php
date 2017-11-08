@@ -5,7 +5,7 @@
  * Date: 10/16/2017
  * Time: 12:15 PM
  */
-function getCorpsAsRow ($db, $cols = null, $sortable = null){
+function getCorpsAsRow ($db, $sortable = null){
     try {
         $sql = $db->prepare("SELECT * FROM corps"); //selects all the records
         $sql->execute();
@@ -13,8 +13,15 @@ function getCorpsAsRow ($db, $cols = null, $sortable = null){
 
         if ($sql->rowCount() > 0) {
             $table = "<table>" . PHP_EOL;
-            if ($cols && !$sortable){}
-            $table.="<tr><th>Company</th><th>Incorporation Date</th><th>Email</th><th>ZipCode</th><th>Owner</th><th>Phone</th><th>The Stuffs</th></tr>";
+            if (!$sortable) {
+
+                $table .= "<tr><th>Company</th><th>Incorporation Date</th><th>Email</th><th>ZipCode</th><th>Owner</th><th>Phone</th><th>The Stuffs</th></tr>";
+
+            }
+            if ($sortable){
+
+                $table .= "<tr><th><a href='?action=sort&col=Company'>Company</a></th><th><a href='?action=sort&col=IncorporationDate'>Incorporation Date</a></th><th><a href='?action=sort&col=Email'>Email</a></th><th><a href='?action=sort&col=ZipCode'>ZipCode</a></th><th><a href='?action=sort&col=Owner'>Owner</a></th><th><a href='?action=sort&col=Phone'>Phone</a></th><th>The Stuffs</th></tr>";
+            }
             foreach ($corps as $corp){
 
                 $table .= "<td>" . $corp["corp"]."</td>";
