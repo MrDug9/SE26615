@@ -18,3 +18,6 @@ function dbcon()
         die($e/*"error connecting to database"*/);
     }
 }
+function sortTable($db, $cols, $dir){
+    $sql = "";
+}

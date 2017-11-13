@@ -8,16 +8,17 @@
 require_once ("assets/dbcon.php");
 require_once ("assets/corp.php");
 include_once("assets/header.php");
-?><a href="add.php">Add Company</a> <?php
+?><a href="add.php">Add Company</a> <a href="?action=sort">Show list</a><?php
 $db=dbcon();
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ??
     filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
-echo(getCorpsAsRow($db));
+$col=filter_input(INPUT_GET, 'col', FILTER_SANITIZE_STRING) ?? NULL;
+
 
 switch($action) {
     case 'sort':
         $sortable = true;
-        echo getEmployeesAsTable($db, $cols, $sortable);
+        echo getCorpsAsRow($db,$col , $sortable);
         break;
 }
 include_once("assets/footer.php");

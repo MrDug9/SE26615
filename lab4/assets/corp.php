@@ -5,9 +5,14 @@
  * Date: 10/16/2017
  * Time: 12:15 PM
  */
-function getCorpsAsRow ($db, $sortable = null){
+function getCorpsAsRow ($db, $col, $sortable = null){
     try {
-        $sql = $db->prepare("SELECT * FROM corps"); //selects all the records
+        if($col == null) {
+            $sql = $db->prepare("SELECT * FROM corps"); //selects all the records
+        }
+        if($col != null){
+            $sql = $db->prepare("SELECT * FROM corps ORDER BY "."$col"." ASC");
+        }
         $sql->execute();
         $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -20,7 +25,7 @@ function getCorpsAsRow ($db, $sortable = null){
             }
             if ($sortable){
 
-                $table .= "<tr><th><a href='?action=sort&col=Company'>Company</a></th><th><a href='?action=sort&col=IncorporationDate'>Incorporation Date</a></th><th><a href='?action=sort&col=Email'>Email</a></th><th><a href='?action=sort&col=ZipCode'>ZipCode</a></th><th><a href='?action=sort&col=Owner'>Owner</a></th><th><a href='?action=sort&col=Phone'>Phone</a></th><th>The Stuffs</th></tr>";
+                $table .= "<tr><th><a href='?action=sort&col=corp'>Company</a></th><th><a href='?action=sort&col=incorp_dt'>Incorporation Date</a></th><th><a href='?action=sort&col=Email'>Email</a></th><th><a href='?action=sort&col=ZipCode'>ZipCode</a></th><th><a href='?action=sort&col=Owner'>Owner</a></th><th><a href='?action=sort&col=Phone'>Phone</a></th><th>The Stuffs</th></tr>";
             }
             foreach ($corps as $corp){
 
