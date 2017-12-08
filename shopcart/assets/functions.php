@@ -14,7 +14,7 @@ function getCat($db){
 
         $out = "";
         foreach ($cats as $cat){
-            $out .="<option value='".$cat["category"]."'>".$cat["category"]."</option>";
+            $out .="<option value='".$cat["category_id"]."'>".$cat["category"]."</option>";
         }
         return $out;
     }catch (PDOException $e){
@@ -22,11 +22,22 @@ function getCat($db){
     }
 }
 
-function showProd($db){
+function showProd($db,$sort = null){
     try {
-        $sql = $db->prepare("SELECT * FROM products WHERE 0=0");
+
+        if($sort == null) {
+            $sql = $db->prepare("SELECT * FROM products WHERE 0=0");
+        }
+        if($sort != null){
+            $sql = $db->prepare("SELECT * FROM products WHERE category_id=".$sort." ");
+        }
+
+
+
         $sql->execute();
         $prods = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
 
         $out = "<div><table><tr><th>Product</th><th>Price</th><th>Image</th></tr>";
         foreach ($prods as $prod){
@@ -58,3 +69,11 @@ function encrypte($db){
         $e->getMessage();
     }
 }
+
+function base64_to_jpeg( $base64_string, $output_file ) {
+    $ifp = fopen( $output_file, "wb" );
+    fwrite( $ifp, base64_decode( $base64_string) );
+    fclose( $ifp );
+    return( $output_file );
+}
+

@@ -11,12 +11,12 @@ require_once ("assets/functions.php");
 include_once ("assets/header.php");
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ??
     filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
-$cat = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
+$cat = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING)?? NULL;
 $db = dbcon();
 
 
 ?>
-<form method="get" action="sort">
+<form method="get" action="index.php">
     <select name="cat">
         <option value="all">All</option>
         <?php echo(getCat($db)) ?>
@@ -26,12 +26,6 @@ $db = dbcon();
 
 
 <?php
-
-switch($action){
-    case 'sort':
-
-}
-echo(encrypte($db));
-
-
+        echo(showProd($db,$cat));
 ?>
+
