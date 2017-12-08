@@ -77,3 +77,43 @@ function base64_to_jpeg( $base64_string, $output_file ) {
     return( $output_file );
 }
 
+function addprod ($db, $cat, $prod, $price){
+    try {
+        $sql = $db->prepare("INSERT INTO products VALUES(null, :cat, :prod, :price, null)");
+        $sql->bindParam(':cat', $cat);
+        $sql->bindParam(':prod', $prod);
+        $sql->bindParam(':price', $price);
+        $sql->execute();
+        echo $sql->rowCount() . " rows inserted.";
+    } catch(PDOException $e){
+        $e->getMessage();
+    }
+}
+
+function deleteProd($db, $id){
+
+    try {
+        $sql = $db->prepare("DELETE FROM products WHERE product_id = :id");
+        $sql->bindParam(':id', $id);
+        $sql->execute();
+        echo $sql->rowCount() . " rows deleted.";
+    }catch (PDOException $e){
+        die($e/*"problem with the corps table"*/);
+    }
+}
+function updateProd($db, $cat, $prod, $price, $id){
+    try {
+        $sql = $db->prepare("UPDATE products SET corp = :corp, email = :email, zipcode = :zip, owner = :owner, phone = :phone WHERE id = :id");
+        $sql->bindParam(':id', $id);
+        $sql->bindParam(':corp', $corp);
+        $sql->bindParam(':email', $email);
+        $sql->bindParam(':zip', $zip);
+        $sql->bindParam(':owner', $owner);
+        $sql->bindParam(':phone', $phone);
+        $sql->execute();
+        echo $sql->rowCount() . " rows updated.";
+    } catch(PDOException $e){
+        $e->getMessage();
+    }
+}
+
